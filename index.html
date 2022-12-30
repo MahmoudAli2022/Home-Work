@@ -25,12 +25,12 @@
                 <div class="col-md-12">
                 <input class="form-control" type="text" name="UserName " id="UserName" placeholder="UserName" required>
                 <div class="valid-feedback d-none" id="validUserName">Username field is valid!</div>
-                <div class="invalid-feedback d-none" id="invalidUserName">Username field cannot be blank!</div>
+                <div class="invalid-feedback d-none" id="invalidUserName">Username field cannot be blank! EX : Mahmoud_215038</div>
                 </div>
                 <div class="col-md-12">
                     <input class="form-control" type="text" name="StudentName" id="StudentName" placeholder="StudentName" required>
                     <div class="valid-feedback d-none" id="validStudentName">StudentName field is valid!</div>
-                    <div class="invalid-feedback d-none" id="invalidStudentName">StudentName field cannot be blank!</div>
+                    <div class="invalid-feedback d-none" id="invalidStudentName">StudentName field cannot be blank! EX : محمود علي</div>
                 </div>
     <div class="col-md-12">
         <input class="form-control" type="date" name="date" id="date" placeholder="date of Birth" required>
@@ -55,7 +55,7 @@
     <div class="col-md-12">
     <input class="form-control" type="number" name="number" id="mobile" placeholder="mobile number" required>
     <div class="valid-feedback d-none" id="mobileValid">mobile number is valid!</div>
-    <div class="invalid-feedback d-none" id="mobileInvalid">mobile number is invalid!</div>
+    <div class="invalid-feedback d-none" id="mobileInvalid">mobile number is invalid! Ex : 0999 999 999</div>
     </div>
         <br>
         <label>Enter Captcha</label>
@@ -96,8 +96,8 @@
     <!-- select
     لاضافة مربع الخيارات -->
 
-        <select>
-            <option value="All">All</option>
+        <select id="filter">
+            <option value="All" >All</option>
             <option value="Bait">Bait</option>
             <option value="Bact">Bact</option>
             <option value="Bit">Bit</option>
@@ -105,7 +105,10 @@
     
     </select>
     <br><pre>
-        فرز حسب :           رقم المستخدم<input type="radio" id="r1" name="1" checked>  اسم الطالب<input type="radio" id="r2"  name="2" checked>  البرنامج<input type="radio" name="3" id="r3"  checkedgr></pre>
+        فرز حسب :  
+                 رقم المستخدم<input type="radio" id="UserNumber" name="gender" />  
+                 اسم الطالب<input type="radio" id="UserNumber"  name="gender" /> 
+                 البرنامج <input type="radio"  id="Porgrams"  name="gender" /></pre>
 
     <!-- تصميم الجدول -->
     <div id="show">
@@ -132,14 +135,14 @@
                 <div class="form-content">
                     <div class="form-items">
                         <div class="form-button mt-3">
-                            <button  type="button" onclick="ConvertToJSON()">convert JSON</button>
+                            <button  type="button" onclick="ConvertToJson()">convert JSON</button>
                         </div>
 
 
                         <br>
                         
                         
-                        <textarea id="json" dir="ltr" cols="75" rows="20"></textarea>
+                        <textarea id="json" readonly></textarea>
                     </div>
                 </div>
             </div>

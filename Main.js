@@ -244,169 +244,327 @@ class employee{
   }
 }
 conter=0;
-function inputs () {
-    inputs_info = [];
-    last_inputs_info =[];
-    inputs_info.push(UserName);
-    inputs_info.push(StudentName);
-    inputs_info.push(programtypeDropDown);
-     /*  array = inputs_info ;
-    console.log(inputs_info) ;
-    localStorage.setItem("Array" , JSON.stringify(array));
-    let pri = JSON.parse(localStorage.getItem("array"));
-    if (pri=== null) {
-        var array = [];
-     }
-     else {
-        var array = pri ;
-        
-       
-     }
-console.log(pri);*/
-    
 
-}
   function myarray() {
-    conter++ ;
     UserName = document.getElementById('UserName').value;
     StudentName = document.getElementById('StudentName').value;
     date = document.getElementById('date');
     programtypeDropDown = document.getElementById('programtype').value;
     mobileNum = document.getElementById('mobile').value;
     captcha = document.getElementById('checkCap');
-    inputs () ;
+    filter = document.getElementById('filter').value;
+    
    
+  
+       
 valid=false;
-if(UserName !== '' && StudentName !== '' && programtypeDropDown !== '' )
+if(UserName !== '' && StudentName !== '' && programtypeDropDown !== '' && mobileNum !== '')
 {
     valid=true;
+    conter++ ;
 }
 else {
     alert ("Enter the Student name  \t  Ex : (Mahmoud_215038)\nEnter the User Name       \t  Ex : (محمود علي)\nEnter the Number Phone \t Ex : (+963 999 999 999)");
 }
 
-    if(valid==true){
+    
+switch (filter)
+{
+
+   case "All" :{
+    if(valid==true && filter == "All"){
+
       
-    inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
-    alert ("ssss");
-    // alert(doha.name);
-    employers.push(inputs_info);
-    }
-    else{
-        alert("cant add new user ");
-    }
-    
-    // alert(employers.leangth);
-    $html=` <table class="student">
-                <tbody>
-                    <tr>
-                        <th> متسلسل </th>
-                        <th>اسم مستخدم </th>
-                        <th> اسم الطالب </th>
-                        <th> البرنامج</th>
-                        
-    
-                    </tr>`;
-    
-    
-    $end=`</tbody>
-    
-    </table>`;
-    
-    
-    employers.forEach(myFunction);
+        inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
+        alert ("ssss");
+        
+       
+
+        employers.push(inputs_info);
+        
+        
+        }
+        else{
+            alert("cant add new user ");
+        }
      
-    function myFunction(employer) {
-        $html +=` <tr>
-            <td>`+employer.id+`</td>
-            <td>`+employer.Uname+`</td>
-                    <td>`+employer.Sname+`</td>
-    
-            <td>`+employer.programT+`</td>
-    
-    
-            </tr>`
+
+    let UserNumber   =  document.getElementById("UserNumber");
+    let StudentsName =  document.getElementById("UserNumber");
+    let programs     =  document.getElementById("Porgrams" );;
+    if (UserNumber.checked == true  )
+    {
+        employers.sort(UserNum);
+        function UserNum(a , b){
+        return b.id - a.id;
+         }
+        console.log(employers);
+       
     }
+    else if (StudentsName.checked == true )
+    {
+
+        employers.sort(StudentN);
+        function StudentN(a , b){
+            if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
+            if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
+         return 0 ;
+         }
+        console.log(employers);
+       
+    }
+    else  if ( programs.checked == true  )
+    {
+        employers.sort(Progrs);
+        function Progrs(a , b){
+                if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
+                if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
+             return 0 ;
+             }
+            console.log(employers);
+           
+        }
     
-    
-    document.getElementById("show").innerHTML=$html+$end;
-    
-}
 
 
-/*
-let counter = 0;
-// get data from localStorage if exists
-var v = JSON.parse(localStorage.getItem("inputs_info"));
-if (v === null) {
-   var inputs_info = [];
+
+        
+        // alert(employers.leangth);
+        $html=` <table class="student">
+                    <tbody>
+                        <tr>
+                            <th> متسلسل </th>
+                            <th>اسم مستخدم </th>
+                            <th> اسم الطالب </th>
+                            <th> البرنامج</th>
+                            
+        
+                        </tr>`;
+        
+        
+        $end=`</tbody>
+        
+        </table>`;
+        
+        
+        employers.forEach(myFunction);
+         
+        function myFunction(employer) {
+            $html +=` <tr>
+                <td>`+employer.id+`</td>
+                <td>`+employer.Uname+`</td>
+                        <td>`+employer.Sname+`</td>
+        
+                <td>`+employer.programT+`</td>
+        
+        
+                </tr>`
+        }
+        
+        
+        
+            document.getElementById("show").innerHTML=$html+$end;
+            break;
+   }
+    case "Bait" :{  if(valid==true){
+      
+        inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
+        alert ("ssss");
+        // alert(doha.name);
+        employers.push(inputs_info);
+        }
+        else{
+            alert("cant add new user ");
+        }
+        
+        // alert(employers.leangth);
+        $html=` <table class="student">
+                    <tbody>
+                        <tr>
+                            <th> متسلسل </th>
+                            <th>اسم مستخدم </th>
+                            <th> اسم الطالب </th>
+                            <th> البرنامج</th>
+                            
+        
+                        </tr>`;
+        
+        
+        $end=`</tbody>
+        
+        </table>`;
+        
+        
+        employers.forEach(myFunction);
+         
+        function myFunction(employer) {
+            $html +=` <tr>
+                <td>`+employer.id+`</td>
+                <td>`+employer.Uname+`</td>
+                        <td>`+employer.Sname+`</td>
+        
+                <td>`+employer.programT+`</td>
+        
+        
+                </tr>`
+        }
+        
+        
+        if (programtypeDropDown=="Bait"){
+            document.getElementById("show").innerHTML=$html+$end;}
+            break ;
+        }
+    case "Bact" :{  if(valid==true){
+      
+        inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
+        alert ("ssss");
+        // alert(doha.name);
+        employers.push(inputs_info);
+        }
+        else{
+            alert("cant add new user ");
+        }
+        
+        // alert(employers.leangth);
+        $html=` <table class="student">
+                    <tbody>
+                        <tr>
+                            <th> متسلسل </th>
+                            <th>اسم مستخدم </th>
+                            <th> اسم الطالب </th>
+                            <th> البرنامج</th>
+                            
+        
+                        </tr>`;
+        
+        
+        $end=`</tbody>
+        
+        </table>`;
+        
+        
+        employers.forEach(myFunction);
+         
+        function myFunction(employer) {
+            $html +=` <tr>
+                <td>`+employer.id+`</td>
+                <td>`+employer.Uname+`</td>
+                        <td>`+employer.Sname+`</td>
+        
+                <td>`+employer.programT+`</td>
+        
+        
+                </tr>`
+        }
+        
+        
+        if (programtypeDropDown=="Bact"){
+            document.getElementById("show").innerHTML=$html+$end;}
+            break ;
+        }
+    case "Bit" :{  if(valid==true){
+      
+        inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
+        alert ("ssss");
+        // alert(doha.name);
+        employers.push(inputs_info);
+        }
+        else{
+            alert("cant add new user ");
+        }
+        
+        // alert(employers.leangth);
+        $html=` <table class="student">
+                    <tbody>
+                        <tr>
+                            <th> متسلسل </th>
+                            <th>اسم مستخدم </th>
+                            <th> اسم الطالب </th>
+                            <th> البرنامج</th>
+                            
+        
+                        </tr>`;
+        
+        
+        $end=`</tbody>
+        
+        </table>`;
+        
+        
+        employers.forEach(myFunction);
+         
+        function myFunction(employer) {
+            $html +=` <tr>
+                <td>`+employer.id+`</td>
+                <td>`+employer.Uname+`</td>
+                        <td>`+employer.Sname+`</td>
+        
+                <td>`+employer.programT+`</td>
+        
+        
+                </tr>`
+        }
+        
+        
+        if (programtypeDropDown=="Bit"){
+            document.getElementById("show").innerHTML=$html+$end;}
+            break ;
+        }
+    case "Bl" :{  if(valid==true){
+      
+        inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
+        alert ("ssss");
+        // alert(doha.name);
+        employers.push(inputs_info);
+        }
+        else{
+            alert("cant add new user ");
+        }
+        
+        // alert(employers.leangth);
+        $html=` <table class="student">
+                    <tbody>
+                        <tr>
+                            <th> متسلسل </th>
+                            <th>اسم مستخدم </th>
+                            <th> اسم الطالب </th>
+                            <th> البرنامج</th>
+                            
+        
+                        </tr>`;
+        
+        
+        $end=`</tbody>
+        
+        </table>`;
+        
+        
+        employers.forEach(myFunction);
+         
+        function myFunction(employer) {
+            $html +=` <tr>
+                <td>`+employer.id+`</td>
+                <td>`+employer.Uname+`</td>
+                        <td>`+employer.Sname+`</td>
+        
+                <td>`+employer.programT+`</td>
+        
+        
+                </tr>`
+        }
+        
+        
+        if (programtypeDropDown=="Bl"){
+            document.getElementById("show").innerHTML=$html+$end;}
+        }
+        break ;
 }
-else {
-   var inputs_info = v;
-   id = parseInt(localStorage.getItem("id"));
   
+    
 }
-counter = counter + 1;
-//init data into JSON object
-var myObj = {
-   "id": id,
-   "user": UName,
-   "name": SName,
-   "major": programT,
-};
-//add object to the array
-inputs_info.push(myObj);
 
-//push array to localStorage
-localStorage.setItem("inputs_info", JSON.stringify(inputs_info));
-localStorage.setItem("counter", counter);
-function ConvertToJSON() {
-    //get data from localStorage
-    inputs_info = JSON.parse(localStorage.getItem("inputs_info"));
- 
-    // get sort way
-     let r = document.getElementsByName('1');
-    let rValue =  "id";
-    for (var i = 0; i < r.length; i++) {
-        if (r[i].checked) {
-            rValue = r[i].value;
-        }
-    }
-    if (document.getElementById('r2').checked)
-        rValue = "name"; 
-
-    if (document.getElementById('r3').checked)
-        rValue = "major";
-
-    // sort
-    inputs_info = s(rValue, inputs_info);
-    //convert to JSON
-    const myArr = JSON.stringify(inputs_info);
-    //view JSON
-    document.getElementById("json").innerHTML = myArr;
-     
+function ConvertToJson() {
+    let My_Json = JSON.stringify(employers);
+    document.getElementById('json').value = My_Json ;
 
 }
-var s = function (prop, arr) {
-    // add sub function for get value from obj (1/2)
-    var _getVal = function (o, key) {
-        var v = o;
-        var k = key.split(".");
-        for (var i in k) {
-            v = v[k[i]];
-        }
-        return v;
-    }
-    return arr.sort(function (a, b) {
-        // get value from obj a, b before sort (2/2)
-        var aVal = _getVal(a, prop);
-        var bVal = _getVal(b, prop);
-        if (aVal < bVal) {
-            return -1;
-        } else if (aVal > bVal) {
-            return 1;
-        } else {
-            return 0;
-        }
-    });
-};*/
