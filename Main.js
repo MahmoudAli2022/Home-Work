@@ -277,44 +277,8 @@ if(valid==true ){
     else{
         alert("cant add new user ");
     }
- 
 
-let UserNumber   =  document.getElementById("UserNumber");
-let StudentsName =  document.getElementById("UserNumber");
-let programs     =  document.getElementById("Porgrams" );;
-if (UserNumber.checked == true  )
-{
-    employers.sort(UserNum);
-    function UserNum(a , b){
-        if (a.Uname.toLowerCase() < b.Uname.toLowerCase()) {return -1 ;}
-        if (a.Uname.toLowerCase() > b.Uname.toLowerCase()) {return  1 ;}
-     return 0 ;
-     }
-   
-}
-else if (StudentsName.checked == true )
-{
 
-    employers.sort(StudentN);
-    function StudentN(a , b){
-        if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
-        if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
-     return 0 ;
-     }
-    console.log(employers);
-   
-}
-else  if ( programs.checked == true  )
-{
-    employers.sort(Progrs);
-    function Progrs(a , b){
-            if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
-            if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
-         return 0 ;
-         }
-        console.log(employers);
-       
-    }
     $html=` <table class="student">
                     <tbody>
                         <tr>
@@ -349,14 +313,14 @@ else  if ( programs.checked == true  )
         
         
             document.getElementById("show").innerHTML=$html+$end;
-
+            clearForm();
 }
 
    
     
 
 function rad1io (){
-    myarray();
+   
     if(valid==true ){
 
       
@@ -377,78 +341,20 @@ function rad1io (){
     let UserNumber   =  document.getElementById("UserNumber");
     let StudentsName =  document.getElementById("UserNumber");
     let programs     =  document.getElementById("Porgrams" );;
-    if (UserNumber.checked == true  )
-    {
+  
         employers.sort(UserNum);
         function UserNum(a , b){
-            if (a.Uname.toLowerCase() < b.Uname.toLowerCase()) {return -1 ;}
-            if (a.Uname.toLowerCase() > b.Uname.toLowerCase()) {return  1 ;}
-         return 0 ;
+        return b.id - a.id ;
          }
       
        
-    }
-    else if (StudentsName.checked == true )
-    {
-
-        employers.sort(StudentN);
-        function StudentN(a , b){
-            if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
-            if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
-         return 0 ;
-         }
-        
-       
-    }
-    else  if ( programs.checked == true  )
-    {
-        employers.sort(Progrs);
-        function Progrs(a , b){
-                if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
-                if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
-             return 0 ;
-             }
-        
-           
-        }
-        $html=` <table class="student">
-                    <tbody>
-                        <tr>
-                            <th> متسلسل </th>
-                            <th>اسم مستخدم </th>
-                            <th> اسم الطالب </th>
-                            <th> البرنامج</th>
-                            
-        
-                        </tr>`;
-        
-        
-        $end=`</tbody>
-        
-        </table>`;
-        
-        
-        employers.forEach(myFunction);
-         
-        function myFunction(employer) {
-            $html +=` <tr>
-                <td>`+employer.id+`</td>
-                <td>`+employer.Uname+`</td>
-                        <td>`+employer.Sname+`</td>
-        
-                <td>`+employer.programT+`</td>
-        
-        
-                </tr>`
-        }
-        
-        
+   
         
             document.getElementById("show").innerHTML=$html+$end;
     
 }
 function rad2io (){
-    myarray();
+   
     if(valid==true ){
 
       
@@ -466,41 +372,16 @@ function rad2io (){
         }
      
 
-    let UserNumber   =  document.getElementById("UserNumber");
-    let StudentsName =  document.getElementById("UserNumber");
-    let programs     =  document.getElementById("Porgrams" );;
-    if (UserNumber.checked == true  )
-    {
-        employers.sort(UserNum);
-        function UserNum(a , b){
-            if (a.Uname.toLowerCase() < b.Uname.toLowerCase()) {return -1 ;}
-            if (a.Uname.toLowerCase() > b.Uname.toLowerCase()) {return  1 ;}
-         return 0 ;
-         }
-       
-       
-    }
-    else if (StudentsName.checked == true )
-    {
 
         employers.sort(StudentN);
         function StudentN(a , b){
-            if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
-            if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
+            if (a.Sname < b.Sname) {return -1 ;}
+            if (a.Sname > b.Sname) {return  1 ;}
          return 0 ;
          }
         
        
-    }
-    else  if ( programs.checked == true  )
-    {
-        employers.sort(Progrs);
-        function Progrs(a , b){
-                if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
-                if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
-             return 0 ;
-             }
-           
+   
            
         }
         $html=` <table class="student">
@@ -538,9 +419,9 @@ function rad2io (){
         
             document.getElementById("show").innerHTML=$html+$end;
     
-}
+
 function rad3io (){
-    myarray();
+    
     if(valid==true ){
 
       
@@ -558,41 +439,16 @@ function rad3io (){
         }
      
 
-    let UserNumber   =  document.getElementById("UserNumber");
-    let StudentsName =  document.getElementById("UserNumber");
-    let programs     =  document.getElementById("Porgrams" );;
-    if (UserNumber.checked == true  )
-    {
-        employers.sort(UserNum);
-        function UserNum(a , b){
-            if (a.Uname.toLowerCase() < b.Uname.toLowerCase()) {return -1 ;}
-            if (a.Uname.toLowerCase() > b.Uname.toLowerCase()) {return  1 ;}
-         return 0 ;
-         }
-        }
-    else if (StudentsName.checked == true )
-    {
-
-        employers.sort(StudentN);
-        function StudentN(a , b){
-            if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
-            if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
-         return 0 ;
-         }
-
-       
-    }
-    else  if ( programs.checked == true  )
-    {
+    
         employers.sort(Progrs);
         function Progrs(a , b){
-                if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
-                if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
+                if (a.programT.toUpperCase() < b.programT.toUpperCase()) {return -1 ;}
+                if (a.programT.toUpperCase() > b.programT.toUpperCase()) {return  1 ;}
              return 0 ;
              }
           
            
-        }
+        
         $html=` <table class="student">
                     <tbody>
                         <tr>
@@ -634,4 +490,7 @@ function ConvertToJson() {
     let My_Json = JSON.stringify(employers);
     document.getElementById('json').value = My_Json ;
 
+}
+function clearForm(){
+     document.getElementById('form').reset();
 }
