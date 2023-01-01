@@ -2,7 +2,7 @@
 <html lang="en" dir="rtl">
 
 <head>
-
+<!-- ربط ملف التنسيق الخارجي -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +12,13 @@
 
 <body>
 
-    <!-- <pre> حفاظ على المسافة بين اسم الطالب و المستطيل النصي -->
-    <pre>
-
             <div class="form-body">
                 <div class="row">
                     <div class="form-holder">
                         <div class="form-content">
                             <div class="form-items">
                                 <h3>أضافة طالب</h3>
+                                <!-- فورم اضافة طالب جديد مع التحقق وكابتشا -->
             <form class="requires-validation" action="" >
                 <div class="col-md-12">
                 <input class="form-control" type="text" name="UserName " id="UserName" placeholder="UserName" required>
@@ -41,6 +39,7 @@
 
     </div>
     <div class="col-md-12">
+        <!-- سليكشن لبرامج الجامعة الافتراضية -->
         <select class="form-select mt-3" name="programtype" id="programtype" required >
                                     <option value="">Program Type</option>
                                     <option value="Bit"> Bit </option>
@@ -58,6 +57,7 @@
     <div class="invalid-feedback d-none" id="mobileInvalid">mobile number is invalid! Ex : 0999 999 999</div>
     </div>
         <br>
+        <!-- ادخل الكابتشا -->
         <label>Enter Captcha</label>
         <div class="form-row">
         <div class="form-group col-md-6">
@@ -72,9 +72,11 @@
         
         <h6>Captcha not visible 
         </h6>
+        <!-- صورة لاعادة تعين رمز الكابتشا -->
         <img src="refresh.jpg" width="40px" onclick="cap()">
     </div>
         </div>
+        <!-- بوتوم لتفعيل تخزين الطالب وطباعته بالجدول -->
         <div class="form-button mt-3">
             <button id="mybutton" type="button"  onclick="myarray()">أضافة</button>
        
@@ -95,7 +97,7 @@
     <h1>جدول اسماء الطلاب </h1><br>
     <!-- select
     لاضافة مربع الخيارات -->
-
+<!-- سلكشين لفلترة الجدول حسب البرنامج -->
         <select id="filter">
             <option value="All" >All</option>
             <option value="Bait">Bait</option>
@@ -104,15 +106,18 @@
             <option value="Bl">Bl</option>
     
     </select>
-    <br><pre>
+    
+    <br>
+                <div class="roo">
+            <!-- ازرار ادخال لفرز المستخد بعدة طريقة -->
         فرز حسب :  
-                 رقم المستخدم<input type="radio" id="UserNumber" name="gender" />  
-                 اسم الطالب<input type="radio" id="UserNumber"  name="gender" /> 
-                 البرنامج <input type="radio"  id="Porgrams"  name="gender" /></pre>
+                 رقم المستخدم<input type="radio" id="UserNumber" name="gender" onchange="rad1io ()" />  
+                 اسم الطالب<input type="radio" id="UserNumber"  name="gender" onchange="rad2io ()" /> 
+                 البرنامج <input type="radio"  id="Porgrams"  name="gender" onchange="rad3io ()" /></div>
 
     <!-- تصميم الجدول -->
     <div id="show">
-        <table id="abc">  <!-- سطر الاساسي للجدول -->
+        <table class="table-fill" >  <!-- سطر الاساسي للجدول -->
             <thead>
               <tr>
                   <td>متسلسل</td>
@@ -135,13 +140,14 @@
                 <div class="form-content">
                     <div class="form-items">
                         <div class="form-button mt-3">
+                            <!-- بوتوم لتفعيل تحويل المدخلات الخاصة بالطالب لصيغة جسون -->
                             <button  type="button" onclick="ConvertToJson()">convert JSON</button>
                         </div>
 
 
                         <br>
                         
-                        
+                        <!-- مساحة نصية لطباعة صيغة الجسون داخلها -->
                         <textarea id="json" readonly></textarea>
                     </div>
                 </div>
@@ -153,6 +159,7 @@
 
 
     <script type="text/javascript">
+        /*فانكشن خاصة لتوليد وتحقق من رمز الكابتشا*/
         function cap() {
             var alpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V'
                 , 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
@@ -183,6 +190,7 @@
 
         cap();
     </script>
+    <!-- ربط ملف الجافا سكريبت الخارجي -->
     <script src="Main.js" type="text/javaScript"></script>
 </body>
 
