@@ -286,9 +286,10 @@ if (UserNumber.checked == true  )
 {
     employers.sort(UserNum);
     function UserNum(a , b){
-    return b.id - a.id;
+        if (a.Uname.toLowerCase() < b.Uname.toLowerCase()) {return -1 ;}
+        if (a.Uname.toLowerCase() > b.Uname.toLowerCase()) {return  1 ;}
+     return 0 ;
      }
-    console.log(employers);
    
 }
 else if (StudentsName.checked == true )
@@ -351,406 +352,11 @@ else  if ( programs.checked == true  )
 
 }
 
-    // جملة سويتش من اجل فلترة المدخلات في الجدول
-// switch (filter)
-// {
-
-//    case "All" :{
-//     if(valid==true && filter == "All"){
-
-      
-//         inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
-//         alert("Add User in table secscful");
-        
-       
-
-//         employers.push(inputs_info);
-        
-        
-//         }
-//         else{
-//             alert("cant add new user ");
-//         }
-     
-
-//     let UserNumber   =  document.getElementById("UserNumber");
-//     let StudentsName =  document.getElementById("UserNumber");
-//     let programs     =  document.getElementById("Porgrams" );;
-//     if (UserNumber.checked == true  )
-//     {
-//         employers.sort(UserNum);
-//         function UserNum(a , b){
-//         return b.id - a.id;
-//          }
-//         console.log(employers);
-       
-//     }
-//     else if (StudentsName.checked == true )
-//     {
-
-//         employers.sort(StudentN);
-//         function StudentN(a , b){
-//             if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
-//             if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
-//          return 0 ;
-//          }
-//         console.log(employers);
-       
-//     }
-//     else  if ( programs.checked == true  )
-//     {
-//         employers.sort(Progrs);
-//         function Progrs(a , b){
-//                 if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
-//                 if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
-//              return 0 ;
-//              }
-//             console.log(employers);
-           
-//         }
-    
-
-
-
-      
-//         $html=` <table class="student">
-//                     <tbody>
-//                         <tr>
-//                             <th> متسلسل </th>
-//                             <th>اسم مستخدم </th>
-//                             <th> اسم الطالب </th>
-//                             <th> البرنامج</th>
-                            
-        
-//                         </tr>`;
-        
-        
-//         $end=`</tbody>
-        
-//         </table>`;
-        
-        
-//         employers.forEach(myFunction);
-         
-//         function myFunction(employer) {
-//             $html +=` <tr>
-//                 <td>`+employer.id+`</td>
-//                 <td>`+employer.Uname+`</td>
-//                         <td>`+employer.Sname+`</td>
-        
-//                 <td>`+employer.programT+`</td>
-        
-        
-//                 </tr>`
-//         }
-        
-        
-        
-//             document.getElementById("show").innerHTML=$html+$end;
-//             break;
-//    }
-//     case "Bait" :{  if(valid==true){
-      
-//         inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
-//         alert("Add User in table secscful");
-        
-//         employers.push(inputs_info);
-//         }
-//         else{
-//             alert("cant add new user ");
-//         }
-//         let UserNumber   =  document.getElementById("UserNumber");
-//     let StudentsName =  document.getElementById("UserNumber");
-//     let programs     =  document.getElementById("Porgrams" );;
-//     if (UserNumber.checked == true  )
-//     {
-//         employers.sort(UserNum);
-//         function UserNum(a , b){
-//         return b.id - a.id;
-//          }
-//         console.log(employers);
-       
-//     }
-//     else if (StudentsName.checked == true )
-//     {
-
-//         employers.sort(StudentN);
-//         function StudentN(a , b){
-//             if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
-//             if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
-//          return 0 ;
-//          }
-//         console.log(employers);
-       
-//     }
-//     else  if ( programs.checked == true  )
-//     {
-//         employers.sort(Progrs);
-//         function Progrs(a , b){
-//                 if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
-//                 if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
-//              return 0 ;
-//              }
-//             console.log(employers);
-           
-//         }
-    
-       
-//         $html=` <table class="student">
-//                     <tbody>
-//                         <tr>
-//                             <th> متسلسل </th>
-//                             <th>اسم مستخدم </th>
-//                             <th> اسم الطالب </th>
-//                             <th> البرنامج</th>
-                            
-        
-//                         </tr>`;
-        
-        
-//         $end=`</tbody>
-        
-//         </table>`;
-        
-        
-//         employers.forEach(myFunction);
-         
-//         function myFunction(employer) {
-//             $html +=` <tr>
-//                 <td>`+employer.id+`</td>
-//                 <td>`+employer.Uname+`</td>
-//                         <td>`+employer.Sname+`</td>
-        
-//                 <td>`+employer.programT+`</td>
-        
-        
-//                 </tr>`
-//         }
-        
-        
-//         if (programtypeDropDown=="Bait"){
-//             document.getElementById("show").innerHTML=$html+$end;}
-//             break ;
-//         }
-//     case "Bact" :{  if(valid==true){
-      
-//         inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
-//         alert("Add User in table secscful");
-       
-//         employers.push(inputs_info);
-//         }
-//         else{
-//             alert("cant add new user ");
-//         }
-//         let UserNumber   =  document.getElementById("UserNumber");
-//     let StudentsName =  document.getElementById("UserNumber");
-//     let programs     =  document.getElementById("Porgrams" );;
-//     if (UserNumber.checked == true  )
-//     {
-//         employers.sort(UserNum);
-//         function UserNum(a , b){
-//         return b.id - a.id;
-//          }
-//         console.log(employers);
-       
-//     }
-//     else if (StudentsName.checked == true )
-//     {
-
-//         employers.sort(StudentN);
-//         function StudentN(a , b){
-//             if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
-//             if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
-//          return 0 ;
-//          }
-//         console.log(employers);
-       
-//     }
-//     else  if ( programs.checked == true  )
-//     {
-//         employers.sort(Progrs);
-//         function Progrs(a , b){
-//                 if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
-//                 if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
-//              return 0 ;
-//              }
-//             console.log(employers);
-           
-//         }
-    
-        
-//         $html=` <table class="student">
-//                     <tbody>
-//                         <tr>
-//                             <th> متسلسل </th>
-//                             <th>اسم مستخدم </th>
-//                             <th> اسم الطالب </th>
-//                             <th> البرنامج</th>
-                            
-        
-//                         </tr>`;
-        
-        
-//         $end=`</tbody>
-        
-//         </table>`;
-        
-        
-//         employers.forEach(myFunction);
-         
-//         function myFunction(employer) {
-//             $html +=` <tr>
-//                 <td>`+employer.id+`</td>
-//                 <td>`+employer.Uname+`</td>
-//                         <td>`+employer.Sname+`</td>
-        
-//                 <td>`+employer.programT+`</td>
-        
-        
-//                 </tr>`
-//         }
-        
-        
-//         if (programtypeDropDown=="Bact"){
-//             document.getElementById("show").innerHTML=$html+$end;}
-//             break ;
-//         }
-//     case "Bit" :{  if(valid==true){
-//     //   تخزين معلومات طالب جديد
-//         inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
-//         alert ("Add User in table secscful");
-//         employers.push(inputs_info);
-//         }
-//         else{
-//             alert("cant add new user ");
-//         }
-//         let UserNumber   =  document.getElementById("UserNumber");
-//     let StudentsName =  document.getElementById("UserNumber");
-//     let programs     =  document.getElementById("Porgrams" );;
-//     if (UserNumber.checked == true  )
-//     {
-//         employers.sort(UserNum);
-//         function UserNum(a , b){
-//         return b.id - a.id;
-//          }
-//         console.log(employers);
-       
-//     }
-//     else if (StudentsName.checked == true )
-//     {
-
-//         employers.sort(StudentN);
-//         function StudentN(a , b){
-//             if (a.Sname.toLowerCase() < b.Sname.toLowerCase()) {return -1 ;}
-//             if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
-//          return 0 ;
-//          }
-//         console.log(employers);
-       
-//     }
-//     else  if ( programs.checked == true  )
-//     {
-//         employers.sort(Progrs);
-//         function Progrs(a , b){
-//                 if (a.programT.toLowerCase() < b.programT.toLowerCase()) {return -1 ;}
-//                 if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
-//              return 0 ;
-//              }
-//             console.log(employers);
-           
-//         }
-    
-        
-//         $html=` <table class="student">
-//                     <tbody>
-//                         <tr>
-//                             <th> متسلسل </th>
-//                             <th>اسم مستخدم </th>
-//                             <th> اسم الطالب </th>
-//                             <th> البرنامج</th>
-                            
-        
-//                         </tr>`;
-        
-        
-//         $end=`</tbody>
-        
-//         </table>`;
-        
-        
-//         employers.forEach(myFunction);
-         
-//         function myFunction(employer) {
-//             $html +=` <tr>
-//                 <td>`+employer.id+`</td>
-//                 <td>`+employer.Uname+`</td>
-//                         <td>`+employer.Sname+`</td>
-        
-//                 <td>`+employer.programT+`</td>
-        
-        
-//                 </tr>`
-//         }
-        
-        
-//         if (programtypeDropDown=="Bit"){
-//             document.getElementById("show").innerHTML=$html+$end;}
-//             break ;
-//         }
-//     case "Bl" :{  if(valid==true){
-      
-//         inputs_info = new employee(programtypeDropDown,StudentName,UserName,conter);
-//         alert("Add User in table secscful");
-        
-//         employers.push(inputs_info);
-//         }
-//         else{
-//             alert("cant add new user ");
-//         }
-        
-        
-//         $html=` <table class="student">
-//                     <tbody>
-//                         <tr>
-//                             <th> متسلسل </th>
-//                             <th>اسم مستخدم </th>
-//                             <th> اسم الطالب </th>
-//                             <th> البرنامج</th>
-                            
-        
-//                         </tr>`;
-        
-        
-//         $end=`</tbody>
-        
-//         </table>`;
-        
-        
-//         employers.forEach(myFunction);
-         
-//         function myFunction(employer) {
-//             $html +=` <tr>
-//                 <td>`+employer.id+`</td>
-//                 <td>`+employer.Uname+`</td>
-//                         <td>`+employer.Sname+`</td>
-        
-//                 <td>`+employer.programT+`</td>
-        
-        
-//                 </tr>`
-//         }
-        
-        
-//         if (programtypeDropDown=="Bl"){
-//             document.getElementById("show").innerHTML=$html+$end;}
-//         }
-//         break ;
-// }
-  
+   
     
 
 function rad1io (){
-    
+    myarray();
     if(valid==true ){
 
       
@@ -775,9 +381,11 @@ function rad1io (){
     {
         employers.sort(UserNum);
         function UserNum(a , b){
-        return b.id - a.id;
+            if (a.Uname.toLowerCase() < b.Uname.toLowerCase()) {return -1 ;}
+            if (a.Uname.toLowerCase() > b.Uname.toLowerCase()) {return  1 ;}
+         return 0 ;
          }
-        console.log(employers);
+      
        
     }
     else if (StudentsName.checked == true )
@@ -789,7 +397,7 @@ function rad1io (){
             if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
          return 0 ;
          }
-        console.log(employers);
+        
        
     }
     else  if ( programs.checked == true  )
@@ -800,7 +408,7 @@ function rad1io (){
                 if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
              return 0 ;
              }
-            console.log(employers);
+        
            
         }
         $html=` <table class="student">
@@ -840,7 +448,7 @@ function rad1io (){
     
 }
 function rad2io (){
-
+    myarray();
     if(valid==true ){
 
       
@@ -865,9 +473,11 @@ function rad2io (){
     {
         employers.sort(UserNum);
         function UserNum(a , b){
-        return b.id - a.id;
+            if (a.Uname.toLowerCase() < b.Uname.toLowerCase()) {return -1 ;}
+            if (a.Uname.toLowerCase() > b.Uname.toLowerCase()) {return  1 ;}
+         return 0 ;
          }
-        console.log(employers);
+       
        
     }
     else if (StudentsName.checked == true )
@@ -879,7 +489,7 @@ function rad2io (){
             if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
          return 0 ;
          }
-        console.log(employers);
+        
        
     }
     else  if ( programs.checked == true  )
@@ -890,7 +500,7 @@ function rad2io (){
                 if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
              return 0 ;
              }
-            console.log(employers);
+           
            
         }
         $html=` <table class="student">
@@ -930,6 +540,7 @@ function rad2io (){
     
 }
 function rad3io (){
+    myarray();
     if(valid==true ){
 
       
@@ -954,11 +565,11 @@ function rad3io (){
     {
         employers.sort(UserNum);
         function UserNum(a , b){
-        return b.id - a.id;
+            if (a.Uname.toLowerCase() < b.Uname.toLowerCase()) {return -1 ;}
+            if (a.Uname.toLowerCase() > b.Uname.toLowerCase()) {return  1 ;}
+         return 0 ;
          }
-        console.log(employers);
-       
-    }
+        }
     else if (StudentsName.checked == true )
     {
 
@@ -968,7 +579,7 @@ function rad3io (){
             if (a.Sname.toLowerCase() > b.Sname.toLowerCase()) {return  1 ;}
          return 0 ;
          }
-        console.log(employers);
+
        
     }
     else  if ( programs.checked == true  )
@@ -979,7 +590,7 @@ function rad3io (){
                 if (a.programT.toLowerCase() > b.programT.toLowerCase()) {return  1 ;}
              return 0 ;
              }
-            console.log(employers);
+          
            
         }
         $html=` <table class="student">
